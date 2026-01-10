@@ -98,14 +98,15 @@
                             class="size-10 object-contain shadow-[0_0_15px_rgba(237,38,61,0.5)] rounded">
                         <h2 class="text-white text-2xl font-bold tracking-tight">Yumpeen.com</h2>
                     </a>
-                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="/">Home</a>
-                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="portfolio.html">Portfolio</a>
-                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="#">Services</a>
-                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="#">About us</a>
+                    <nav class="hidden md:flex items-center gap-10">
+                        <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="/">Home</a>
+                        <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="/portfolio.html">Portfolio</a>
+                        <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="#">Services</a>
+                        <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="#">About us</a>
                     </nav>
                     <button
                         class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
@@ -115,6 +116,10 @@
                         <div
                             class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                         </div>
+                    </button>
+                    <!-- Mobile Menu Icon -->
+                    <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
+                        <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
             </div>
@@ -460,7 +465,7 @@
                                 <li><a class="text-accent-blue hover:text-primary transition-colors" href="/">Home</a>
                                 </li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="portfolio.html">Portfolio</a>
+                                        href="/portfolio.html">Portfolio</a>
                                 </li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
                                         href="#">Services</a></li>
