@@ -157,10 +157,73 @@
                         <!-- Glow effect behind -->
                         <div class="absolute w-64 h-64 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
                         <!-- Abstract Shape Image -->
-                        <div class="relative w-full aspect-square max-w-[600px] bg-center bg-cover bg-no-repeat animate-[float_6s_ease-in-out_infinite] rounded-lg border border-white/10"
-                            data-alt="People jumping into the water from a pier"
-                            style="background-image: url('/assets/hero-jump.jpg');">
+                        <!-- Carousel Container -->
+                        <div id="hero-carousel"
+                            class="relative w-full aspect-square max-w-[600px] animate-[float_6s_ease-in-out_infinite] rounded-lg border border-white/10 overflow-hidden bg-gray-900">
+                            <!-- Layer 1 -->
+                            <div id="hero-layer-1"
+                                class="absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-1000 opacity-100 ease-in-out">
+                            </div>
+                            <!-- Layer 2 -->
+                            <div id="hero-layer-2"
+                                class="absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-1000 opacity-0 ease-in-out">
+                            </div>
                         </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const images = [
+                                    '/assets/hero-jump.jpg',
+                                    '/assets/hero-jump-2.jpg',
+                                    '/assets/hero-jump-3.jpg',
+                                    '/assets/hero-jump-4.jpg',
+                                    '/assets/hero-jump-5.jpg',
+                                    '/assets/hero-jump-6.jpg'
+                                ];
+
+                                // Random start
+                                let currentIndex = Math.floor(Math.random() * images.length);
+
+                                const layer1 = document.getElementById('hero-layer-1');
+                                const layer2 = document.getElementById('hero-layer-2');
+                                let activeLayer = 1; // 1 means layer1 is visible, 2 means layer2 is visible
+
+                                // Set initial image
+                                layer1.style.backgroundImage = `url('${images[currentIndex]}')`;
+
+                                // Carousel interval
+                                setInterval(() => {
+                                    // Calculate next index
+                                    currentIndex = (currentIndex + 1) % images.length;
+                                    const nextImage = images[currentIndex];
+
+                                    if (activeLayer === 1) {
+                                        // Prepare layer 2 (which is hidden/behind)
+                                        layer2.style.backgroundImage = `url('${nextImage}')`;
+
+                                        // Fade in layer 2, Fade out layer 1
+                                        layer2.classList.remove('opacity-0');
+                                        layer2.classList.add('opacity-100');
+                                        layer1.classList.remove('opacity-100');
+                                        layer1.classList.add('opacity-0');
+
+                                        activeLayer = 2;
+                                    } else {
+                                        // Prepare layer 1
+                                        layer1.style.backgroundImage = `url('${nextImage}')`;
+
+                                        // Fade in layer 1, Fade out layer 2
+                                        layer1.classList.remove('opacity-0');
+                                        layer1.classList.add('opacity-100');
+                                        layer2.classList.remove('opacity-100');
+                                        layer2.classList.add('opacity-0');
+
+                                        activeLayer = 1;
+                                    }
+
+                                }, 5000); // 5 seconds
+                            });
+                        </script>
                     </div>
                 </div>
                 <!-- Scroll Indicator -->
@@ -365,7 +428,7 @@
             }
 
             50% {
-                transform: translateY(-20px) rotate(3deg);
+                transform: translateY(-8px) rotate(1deg);
             }
         }
 
