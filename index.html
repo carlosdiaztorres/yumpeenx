@@ -112,9 +112,49 @@
                         </div>
                     </button>
                     <!-- Mobile Menu Icon -->
-                    <button class="md:hidden text-white">
+                    <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
+
+                    <!-- Mobile Menu Overlay -->
+                    <div id="mobile-menu"
+                        class="fixed inset-0 bg-background-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300">
+                        <nav class="flex flex-col items-center gap-8">
+                            <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                                href="#">Work</a>
+                            <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                                href="#">Services</a>
+                            <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                                href="#">About</a>
+                        </nav>
+                        <button
+                            class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300">
+                            <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Let's
+                                Talk</span>
+                        </button>
+                    </div>
+
+                    <script>
+                        const menuBtn = document.getElementById('mobile-menu-btn');
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        const menuIcon = menuBtn.querySelector('span');
+                        let isMenuOpen = false;
+
+                        menuBtn.addEventListener('click', () => {
+                            isMenuOpen = !isMenuOpen;
+                            if (isMenuOpen) {
+                                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                                menuIcon.textContent = 'close';
+                                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                            } else {
+                                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                                menuIcon.textContent = 'menu';
+                                document.body.style.overflow = ''; // Restore scrolling
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </header>
@@ -126,7 +166,7 @@
                     <div class="flex flex-col gap-8 relative z-10 order-2 lg:order-1">
                         <div class="flex flex-col">
                             <h1
-                                class="text-text-off-white text-6xl md:text-8xl lg:text-[7rem] font-bold leading-[0.9] tracking-tighter">
+                                class="text-text-off-white text-5xl md:text-8xl lg:text-[7rem] font-bold leading-[0.9] tracking-tighter">
                                 <span
                                     class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">We
                                     Don't</span>
@@ -426,7 +466,7 @@
                     </div>
                     <div
                         class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
-                        <p class="text-accent-blue/50 text-sm">© 2024 Yumpeen Agency. All rights reserved.</p>
+                        <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen. All rights reserved.</p>
                         <div class="flex gap-6">
                             <a class="text-accent-blue/50 hover:text-white text-sm" href="#">Privacy Policy</a>
                             <a class="text-accent-blue/50 hover:text-white text-sm" href="#">Terms of Service</a>
