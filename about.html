@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us // Yumpeen studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo-red.png" />
+    <link rel="apple-touch-icon" href="/assets/logo-red.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef233c",
+                        "secondary": "#d90429",
+                        "background-light": "#edf2f4",
+                        "background-dark": "#031126",
+                        "text-off-white": "#edf2f4",
+                        "accent-blue": "#8d99ae",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                    backgroundImage: {
+                        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+                        'glow': "radial-gradient(circle at top right, rgba(239, 35, 60, 0.15), transparent 40%)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(3, 17, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #031126;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ed263d;
+        }
+
+        .about-image-gradient {
+            background: linear-gradient(to top, rgba(3, 17, 38, 1) 0%, rgba(3, 17, 38, 0) 40%);
+        }
+
+        @media (min-width: 1024px) {
+            .about-image-gradient {
+                background: linear-gradient(to left, rgba(3, 17, 38, 1) 0%, rgba(3, 17, 38, 0) 30%);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-dark text-text-off-white font-display min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary selection:text-white antialiased">
+    <!-- Ambient Glow & Noise Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-glow opacity-60"></div>
+        <div
+            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_bottom_left,_rgba(141,153,174,0.08),_transparent_50%)]">
+        </div>
+        <div class="absolute inset-0 bg-noise opacity-30 mix-blend-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-white/5">
+        <div class="layout-container flex justify-center w-full">
+            <div class="w-full max-w-[1440px] px-6 md:px-12 py-4 flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+                    <img src="/assets/logo-red.png" alt="Yumpeen Logo"
+                        class="size-10 object-contain shadow-[0_0_15px_rgba(237,38,61,0.5)] rounded">
+                    <h2 class="text-white text-2xl font-bold tracking-tight hover:text-primary transition-colors">
+                        Yumpeen.com</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                        href="/">Home</a>
+                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                        href="./portfolio.html">Portfolio</a>
+                    <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                        href="./services.html">Services</a>
+                    <a class="text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                        href="./about.html">About us</a>
+                </nav>
+                <button onclick="window.location.href='contact.html'"
+                    class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
+                    <span
+                        class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white">Let's
+                        Talk</span>
+                    <div
+                        class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    </div>
+                </button>
+                <!-- Mobile Menu Icon -->
+                <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 h-[100dvh] bg-background-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
+        <nav class="flex flex-col items-center gap-6">
+            <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                href="/">Home</a>
+            <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                href="./portfolio.html">Portfolio</a>
+            <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                href="./services.html">Services</a>
+            <a class="text-2xl font-bold text-primary transition-colors uppercase tracking-widest"
+                href="./about.html">About us</a>
+        </nav>
+        <button onclick="window.location.href='contact.html'"
+            class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300 flex-shrink-0">
+            <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Let's Talk</span>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-grow pt-32 lg:pt-0">
+        <div class="flex flex-col lg:flex-row min-h-[calc(100vh-80px)] lg:min-h-screen">
+            <!-- Left: Text Content -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center px-6 md:px-12 lg:px-20 py-16 lg:py-0">
+                <div class="max-w-2xl">
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-10 text-white transition-all">
+                        <span class="block text-stroke text-transparent">The Mind</span>
+                        <span class="block text-stroke text-transparent">Behind</span>
+                        <span class="block text-primary">The Yump.</span>
+                    </h1>
+
+                    <div class="space-y-6 mb-12">
+                        <p class="text-xl md:text-2xl text-text-off-white font-light leading-relaxed">
+                            <span class="font-bold text-primary">I'm Carlos Díaz.</span> After 46 years of navigating
+                            the worlds of design, marketing, and innovation, I've learned that the highest jumps are
+                            only possible with hard work and a world-class team.
+                        </p>
+                        <p class="text-lg text-accent-blue font-light leading-relaxed">
+                            I believe in dynamic business, shared smiles, and the perfect rhythm—whether in music or a
+                            project timeline.
+                        </p>
+                    </div>
+
+                    <!-- Values Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-white/10">
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+                                <h3 class="font-bold text-xs uppercase tracking-widest text-white">Elevation</h3>
+                            </div>
+                            <p class="text-xs text-accent-blue leading-relaxed">
+                                Rising above standard solutions to deliver exceptional height.
+                            </p>
+                        </div>
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">bolt</span>
+                                <h3 class="font-bold text-xs uppercase tracking-widest text-white">Momentum</h3>
+                            </div>
+                            <p class="text-xs text-accent-blue leading-relaxed">
+                                Keeping the energy moving forward, never static.
+                            </p>
+                        </div>
+                        <div class="group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">precision_manufacturing</span>
+                                <h3 class="font-bold text-xs uppercase tracking-widest text-white">Precision</h3>
+                            </div>
+                            <p class="text-xs text-accent-blue leading-relaxed">
+                                Human insight meets exacting digital standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Carlos Portrait -->
+            <div class="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-slate-900 group">
+                <div class="absolute inset-0 z-0">
+                    <img alt="Portrait of Carlos Díaz"
+                        class="w-full h-full object-cover grayscale-[30%] contrast-110 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                        src="/assets/carlos-diaz.jpg" />
+                    <!-- Gradient Overlays -->
+                    <div class="absolute inset-0 about-image-gradient z-10 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-primary mix-blend-color opacity-10"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating CTA -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <button onclick="window.location.href='contact.html'"
+            class="relative overflow-hidden px-8 py-5 bg-primary hover:bg-red-600 text-white font-bold text-lg tracking-wider rounded transition-all duration-300 group shadow-[0_0_20px_rgba(237,38,61,0.3)] hover:shadow-[0_0_30px_rgba(237,38,61,0.6)]">
+            <span class="relative z-10 flex items-center justify-center gap-3">
+                LET'S TALK
+                <span
+                    class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/10 bg-black/40 pt-16 pb-8 relative z-10">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-6">Yumpeen.com</h3>
+                    <p class="text-accent-blue max-w-xs">
+                        A digital studio crafting experiences that merge art, technology, and strategy.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Sitemap</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="/">Home</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                href="./portfolio.html">Portfolio</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                href="./services.html">Services</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="./about.html">About
+                                us</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Socials</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                href="https://www.instagram.com/yumpeen/" target="_blank"
+                                rel="noopener noreferrer">Instagram</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                href="https://x.com/Yumpeen" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+                        </li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="#">Behance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+                <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a class="text-accent-blue/50 hover:text-primary text-sm" href="#">Privacy policy</a>
+                    <a class="text-accent-blue/50 hover:text-primary text-sm" href="#">Terms of service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('span');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                menuIcon.textContent = 'close';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuIcon.textContent = 'menu';
+                document.body.style.overflow = '';
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuIcon.textContent = 'menu';
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
