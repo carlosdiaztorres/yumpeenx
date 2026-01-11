@@ -24,9 +24,9 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ef233c", // Punch Red
-                        "secondary": "#d90429", // Flag Red
-                        "background-light": "#edf2f4", // Platinum
+                        "primary": "#ef233c",
+                        "secondary": "#d90429",
+                        "background-light": "#edf2f4",
                         "background-dark": "#031126",
                         "text-off-white": "#edf2f4",
                         "accent-blue": "#8d99ae",
@@ -121,11 +121,15 @@
                         href="#">About us</a>
                 </nav>
                 <button onclick="window.location.href='contact.html'"
-                    class="hidden md:flex group relative overflow-hidden rounded bg-primary border border-primary px-6 py-2 transition-colors duration-300">
+                    class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
                     <span
                         class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white">Let's
                         Talk</span>
+                    <div
+                        class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    </div>
                 </button>
+                <!-- Mobile Menu Icon -->
                 <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
