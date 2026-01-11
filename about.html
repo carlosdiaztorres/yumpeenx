@@ -168,9 +168,17 @@
                         <span class="block text-primary">The Yump.</span>
                     </h1>
 
-                    <div class="space-y-6 mb-12">
+                    <!-- Image for Mobile Only (between title and content) -->
+                    <div class="lg:hidden w-full mb-10 relative aspect-[4/5] rounded overflow-hidden">
+                        <img alt="Portrait of Carlos Díaz"
+                            class="w-full h-full object-cover grayscale-[30%] contrast-110"
+                            src="/assets/carlos-diaz.jpg" />
+                        <div class="absolute inset-0 bg-primary mix-blend-color opacity-10"></div>
+                    </div>
+
+                    <div class="space-y-6 mb-8">
                         <p class="text-xl md:text-2xl text-text-off-white font-light leading-relaxed">
-                            <span class="font-bold text-primary">I'm Carlos Díaz.</span> After 46 years of navigating
+                            <span class="font-bold text-primary">I'm Carlos Díaz.</span> After many years of navigating
                             the worlds of design, marketing, and innovation, I've learned that the highest jumps are
                             only possible with hard work and a world-class team.
                         </p>
@@ -180,35 +188,44 @@
                         </p>
                     </div>
 
+                    <!-- Mobile Let's Talk Button (appears after intro) -->
+                    <div class="lg:hidden mb-12">
+                        <button onclick="window.location.href='contact.html'"
+                            class="w-full py-5 bg-primary hover:bg-red-600 text-white font-bold text-lg tracking-wider rounded transition-all duration-300 flex items-center justify-center gap-3">
+                            LET'S TALK
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+
                     <!-- Values Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-white/10">
                         <div class="group">
                             <div class="flex items-center gap-3 mb-3">
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
-                                <h3 class="font-bold text-xs uppercase tracking-widest text-white">Elevation</h3>
+                                    class="material-symbols-outlined text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-3xl">north_east</span>
+                                <h3 class="font-bold text-lg uppercase tracking-widest text-white">Elevation</h3>
                             </div>
-                            <p class="text-xs text-accent-blue leading-relaxed">
+                            <p class="text-base text-accent-blue leading-relaxed">
                                 Rising above standard solutions to deliver exceptional height.
                             </p>
                         </div>
                         <div class="group">
                             <div class="flex items-center gap-3 mb-3">
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">bolt</span>
-                                <h3 class="font-bold text-xs uppercase tracking-widest text-white">Momentum</h3>
+                                    class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform text-3xl">bolt</span>
+                                <h3 class="font-bold text-lg uppercase tracking-widest text-white">Momentum</h3>
                             </div>
-                            <p class="text-xs text-accent-blue leading-relaxed">
+                            <p class="text-base text-accent-blue leading-relaxed">
                                 Keeping the energy moving forward, never static.
                             </p>
                         </div>
                         <div class="group">
                             <div class="flex items-center gap-3 mb-3">
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">precision_manufacturing</span>
-                                <h3 class="font-bold text-xs uppercase tracking-widest text-white">Precision</h3>
+                                    class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform text-3xl">precision_manufacturing</span>
+                                <h3 class="font-bold text-lg uppercase tracking-widest text-white">Precision</h3>
                             </div>
-                            <p class="text-xs text-accent-blue leading-relaxed">
+                            <p class="text-base text-accent-blue leading-relaxed">
                                 Human insight meets exacting digital standards.
                             </p>
                         </div>
@@ -216,13 +233,13 @@
                 </div>
             </div>
 
-            <!-- Right: Carlos Portrait -->
-            <div class="w-full lg:w-2/5 relative min-h-[50vh] lg:min-h-screen bg-slate-900 group">
-                <div class="absolute inset-0 z-0">
+            <!-- Right: Carlos Portrait (Desktop Only) -->
+            <div class="hidden lg:flex w-full lg:w-2/5 relative items-center justify-center pr-12 lg:pr-20 group">
+                <div class="relative w-full aspect-[4/5] overflow-hidden rounded shadow-2xl">
                     <img alt="Portrait of Carlos Díaz"
                         class="w-full h-full object-cover grayscale-[30%] contrast-110 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                         src="/assets/carlos-diaz.jpg" />
-                    <!-- Gradient Overlays -->
+                    <!-- Desktop Overlays -->
                     <div class="absolute inset-0 about-image-gradient z-10 pointer-events-none"></div>
                     <div class="absolute inset-0 bg-primary mix-blend-color opacity-10"></div>
                 </div>
@@ -230,8 +247,8 @@
         </div>
     </main>
 
-    <!-- Floating CTA -->
-    <div class="fixed bottom-8 right-8 z-50">
+    <!-- Floating CTA (Desktop Only) -->
+    <div class="fixed bottom-8 right-8 z-50 hidden lg:block">
         <button onclick="window.location.href='contact.html'"
             class="relative overflow-hidden px-8 py-5 bg-primary hover:bg-red-600 text-white font-bold text-lg tracking-wider rounded transition-all duration-300 group shadow-[0_0_20px_rgba(237,38,61,0.3)] hover:shadow-[0_0_30px_rgba(237,38,61,0.6)]">
             <span class="relative z-10 flex items-center justify-center gap-3">
