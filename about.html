@@ -168,15 +168,7 @@
                         <span class="block text-primary">The Yump.</span>
                     </h1>
 
-                    <!-- Image for Mobile Only (between title and content) -->
-                    <div class="lg:hidden w-full mb-10 relative aspect-[4/5] rounded overflow-hidden">
-                        <img alt="Portrait of Carlos Díaz"
-                            class="w-full h-full object-cover grayscale-[30%] contrast-110"
-                            src="/assets/carlos-diaz.jpg" />
-                        <div class="absolute inset-0 bg-primary mix-blend-color opacity-10"></div>
-                    </div>
-
-                    <div class="space-y-6 mb-8">
+                    <div class="space-y-6 mb-10">
                         <p class="text-xl md:text-2xl text-text-off-white font-light leading-relaxed">
                             <span class="font-bold text-primary">I'm Carlos Díaz.</span> After many years of navigating
                             the worlds of design, marketing, and innovation, I've learned that the highest jumps are
@@ -188,17 +180,17 @@
                         </p>
                     </div>
 
-                    <!-- Mobile Let's Talk Button (appears after intro) -->
-                    <div class="lg:hidden mb-12">
-                        <button onclick="window.location.href='contact.html'"
-                            class="w-full py-5 bg-primary hover:bg-red-600 text-white font-bold text-lg tracking-wider rounded transition-all duration-300 flex items-center justify-center gap-3">
-                            LET'S TALK
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </button>
+                    <!-- Image for Mobile Only (between intro and values) -->
+                    <div class="lg:hidden w-full mb-10 relative aspect-[4/5] rounded overflow-hidden">
+                        <img alt="Portrait of Carlos Díaz"
+                            class="w-full h-full object-cover grayscale-[30%] contrast-110"
+                            src="/assets/carlos-diaz.jpg" />
+                        <!-- No gradient on mobile image as requested previously -->
+                        <div class="absolute inset-0 bg-primary mix-blend-color opacity-10"></div>
                     </div>
 
                     <!-- Values Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-white/10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 border-t border-white/10">
                         <div class="group">
                             <div class="flex items-center gap-3 mb-3">
                                 <span
@@ -230,11 +222,23 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- Centered CTA Button (Visible on both, now in-flow) -->
+                    <div class="flex justify-center mt-6 lg:mt-10 lg:pb-0 pb-16">
+                        <button onclick="window.location.href='contact.html'"
+                            class="w-full md:w-auto px-12 py-5 bg-primary hover:bg-red-600 text-white font-bold text-lg tracking-wider rounded transition-all duration-300 group shadow-[0_0_20px_rgba(237,38,61,0.3)] hover:shadow-[0_0_30px_rgba(237,38,61,0.6)]">
+                            <span class="flex items-center justify-center gap-3">
+                                LET'S TALK
+                                <span
+                                    class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <!-- Right: Carlos Portrait (Desktop Only) -->
-            <div class="hidden lg:flex w-full lg:w-2/5 relative items-center justify-center pr-12 lg:pr-20 group">
+            <div class="hidden lg:flex w-full lg:w-2/5 relative items-start justify-center pr-12 lg:pr-20 pt-32 group">
                 <div class="relative w-full aspect-[4/5] overflow-hidden rounded shadow-2xl">
                     <img alt="Portrait of Carlos Díaz"
                         class="w-full h-full object-cover grayscale-[30%] contrast-110 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
@@ -246,18 +250,6 @@
             </div>
         </div>
     </main>
-
-    <!-- Floating CTA (Desktop Only) -->
-    <div class="fixed bottom-8 right-8 z-50 hidden lg:block">
-        <button onclick="window.location.href='contact.html'"
-            class="relative overflow-hidden px-8 py-5 bg-primary hover:bg-red-600 text-white font-bold text-lg tracking-wider rounded transition-all duration-300 group shadow-[0_0_20px_rgba(237,38,61,0.3)] hover:shadow-[0_0_30px_rgba(237,38,61,0.6)]">
-            <span class="relative z-10 flex items-center justify-center gap-3">
-                LET'S TALK
-                <span
-                    class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
-            </span>
-        </button>
-    </div>
 
     <!-- Footer -->
     <footer class="w-full border-t border-white/10 bg-black/40 pt-16 pb-8 relative z-10">
