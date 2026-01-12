@@ -115,9 +115,13 @@
                         href="./about.html">About us</a>
                 </nav>
                 <button onclick="window.location.href='contact.html'"
-                    class="hidden md:flex group relative overflow-hidden rounded bg-primary border border-primary px-6 py-2 transition-colors duration-300">
-                    <span class="relative z-10 text-white text-xs font-bold uppercase tracking-wider">Let's
+                    class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
+                    <span
+                        class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Let's
                         Talk</span>
+                    <div
+                        class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                    </div>
                 </button>
                 <!-- Mobile Menu Icon -->
                 <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
@@ -153,8 +157,10 @@
                 <!-- Hero Typography synced with Home CTA format -->
                 <div class="mb-16 md:mb-24">
                     <h1
-                        class="text-5xl md:text-7xl lg:text-[7rem] font-bold text-text-off-white tracking-tight leading-[0.9] mb-8 text-stroke text-transparent">
-                        Ready to take <br />
+                        class="text-5xl md:text-7xl lg:text-[7rem] font-bold text-text-off-white tracking-tight leading-[0.9] mb-8">
+                        <span
+                            class="text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">Ready
+                            to take</span> <br />
                         <span class="text-primary">the leap?</span>
                     </h1>
                     <p class="text-lg md:text-xl text-accent-blue font-light max-w-2xl mx-auto leading-relaxed">
