@@ -87,7 +87,18 @@
 <body
     class="bg-background-light dark:bg-background-dark font-display antialiased selection:bg-primary selection:text-white">
     <!-- Noise Texture Overlay -->
-    <div class="fixed inset-0 z-[0] pointer-events-none opacity-40 bg-noise mix-blend-overlay"></div>
+    <div class="fixed inset-0 z-[5] pointer-events-none opacity-40 bg-noise mix-blend-overlay"></div>
+
+    <!-- Full Screen Hero Background -->
+    <div id="hero-bg-fixed" class="fixed inset-0 z-0 bg-background-dark overflow-hidden">
+        <div id="hero-bg-image"
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-1000 scale-105">
+        </div>
+        <!-- Overlays for legibility -->
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-background-dark/20"></div>
+    </div>
+
     <div class="relative z-10 flex min-h-screen w-full flex-col overflow-x-hidden">
         <!-- Navigation -->
         <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-white/5">
@@ -185,7 +196,7 @@
                     <div class="flex flex-col gap-8 relative z-10 order-2 lg:order-1">
                         <div class="flex flex-col">
                             <h1
-                                class="text-text-off-white text-5xl md:text-8xl lg:text-[7rem] font-bold leading-[0.9] tracking-tighter">
+                                class="text-text-off-white text-5xl md:text-8xl lg:text-[7rem] font-bold leading-[0.9] tracking-tighter drop-shadow-2xl">
                                 <span
                                     class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">We
                                     Don't</span>
@@ -209,82 +220,8 @@
                             </button>
                         </div>
                     </div>
-                    <!-- 3D Abstract Visual Placeholer -->
-                    <div
-                        class="relative h-full min-h-[250px] md:min-h-[400px] flex items-center justify-center order-1 lg:order-2">
-                        <!-- Glow effect behind -->
-                        <div class="absolute w-64 h-64 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
-                        <!-- Abstract Shape Image -->
-                        <!-- Carousel Container -->
-                        <div id="hero-carousel"
-                            class="relative w-full aspect-[4/3] md:aspect-square max-w-[600px] animate-[float_6s_ease-in-out_infinite] rounded-lg border border-white/10 overflow-hidden bg-gray-900">
-                            <!-- Layer 1 -->
-                            <div id="hero-layer-1"
-                                class="absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-1000 opacity-100 ease-in-out">
-                            </div>
-                            <!-- Layer 2 -->
-                            <div id="hero-layer-2"
-                                class="absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-1000 opacity-0 ease-in-out">
-                            </div>
-                        </div>
-
-                        <script>
-                            document.addEventListener('DOMContentLoaded', () => {
-                                const images = [
-                                    '/assets/hero-jump.jpg',
-                                    '/assets/hero-jump-2.jpg',
-                                    '/assets/hero-jump-3.jpg',
-                                    '/assets/hero-jump-4.jpg',
-                                    '/assets/hero-jump-5.jpg',
-                                    '/assets/hero-jump-6.jpg',
-                                    '/assets/hero-jump-7.jpg',
-                                    '/assets/hero-jump-8.jpg'
-                                ];
-
-                                // Random start
-                                let currentIndex = Math.floor(Math.random() * images.length);
-
-                                const layer1 = document.getElementById('hero-layer-1');
-                                const layer2 = document.getElementById('hero-layer-2');
-                                let activeLayer = 1; // 1 means layer1 is visible, 2 means layer2 is visible
-
-                                // Set initial image
-                                layer1.style.backgroundImage = `url('${images[currentIndex]}')`;
-
-                                // Carousel interval
-                                setInterval(() => {
-                                    // Calculate next index
-                                    currentIndex = (currentIndex + 1) % images.length;
-                                    const nextImage = images[currentIndex];
-
-                                    if (activeLayer === 1) {
-                                        // Prepare layer 2 (which is hidden/behind)
-                                        layer2.style.backgroundImage = `url('${nextImage}')`;
-
-                                        // Fade in layer 2, Fade out layer 1
-                                        layer2.classList.remove('opacity-0');
-                                        layer2.classList.add('opacity-100');
-                                        layer1.classList.remove('opacity-100');
-                                        layer1.classList.add('opacity-0');
-
-                                        activeLayer = 2;
-                                    } else {
-                                        // Prepare layer 1
-                                        layer1.style.backgroundImage = `url('${nextImage}')`;
-
-                                        // Fade in layer 1, Fade out layer 2
-                                        layer1.classList.remove('opacity-0');
-                                        layer1.classList.add('opacity-100');
-                                        layer2.classList.remove('opacity-100');
-                                        layer2.classList.add('opacity-0');
-
-                                        activeLayer = 1;
-                                    }
-
-                                }, 5000); // 5 seconds
-                            });
-                        </script>
-                    </div>
+                    <!-- Placeholder for right side to maintain layout balance -->
+                    <div class="hidden lg:block"></div>
                 </div>
                 <!-- Scroll Indicator -->
                 <div
@@ -506,19 +443,33 @@
             </footer>
         </main>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                '/assets/hero-jump.jpg',
+                '/assets/hero-jump-2.jpg',
+                '/assets/hero-jump-3.jpg',
+                '/assets/hero-jump-4.jpg',
+                '/assets/hero-jump-5.jpg',
+                '/assets/hero-jump-6.jpg',
+                '/assets/hero-jump-7.jpg',
+                '/assets/hero-jump-8.jpg'
+            ];
+
+            const bgImage = document.getElementById('hero-bg-image');
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+
+            // Preload and show
+            const img = new Image();
+            img.src = randomImage;
+            img.onload = () => {
+                bgImage.style.backgroundImage = `url('${randomImage}')`;
+                bgImage.classList.remove('opacity-0');
+                bgImage.classList.add('opacity-100');
+            };
+        });
+    </script>
     <style>
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
         @keyframes marquee {
             0% {
                 transform: translateX(0);
