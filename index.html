@@ -81,6 +81,18 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ed263d;
         }
+
+        /* Scrollbar hide */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
@@ -236,17 +248,18 @@
                     <div>
                         <a href="./portfolio.html"
                             class="text-primary text-xs font-bold uppercase tracking-widest mb-2 block hover:text-primary">Portfolio</a>
-                        <h2 class="text-text-off-white text-4xl md:text-5xl font-bold tracking-tight">Some of our work
+                        <h2 class="text-text-off-white text-4xl md:text-5xl font-bold tracking-tight">Our work
                         </h2>
                     </div>
                 </div>
             </section>
-            <!-- Image Grid -->
-            <section class="w-full max-w-[1440px] px-6 md:px-12 pb-20">
-                <div class="grid grid-cols-12 gap-y-8 gap-x-6 md:gap-x-8">
-                    <!-- Project 01 (Spans 11 cols on mobile) -->
+            <!-- Horizontal Project Scroll -->
+            <section class="w-full pb-20 overflow-hidden">
+                <div
+                    class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-12 px-6 md:px-12 pb-10 scrollbar-hide">
+                    <!-- Project 01 -->
                     <a href="http://www.vinaris.es" target="_blank"
-                        class="group cursor-pointer col-span-11 md:col-span-8 flex flex-col gap-4">
+                        class="group cursor-pointer w-[85vw] md:w-[700px] flex-shrink-0 snap-center flex flex-col gap-4">
                         <div class="relative overflow-hidden rounded bg-white p-12 aspect-[16/9]">
                             <img alt="Vinaris Wine Distribution"
                                 class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
@@ -261,43 +274,29 @@
                                 class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">arrow_outward</span>
                         </div>
                     </a>
-                    <!-- Testimonial (Spans 4 cols) -->
-                    <div class="hidden md:block md:col-span-4">
-                        <div class="h-full flex flex-col justify-end pb-12 px-6 border-l border-white/5">
-                            <p class="text-accent-blue text-sm leading-relaxed max-w-[200px]">
-                                "Yumpeen transformed our digital presence into something tangible and electric."
-                            </p>
-                            <div class="mt-4 flex items-center gap-2">
-                                <div class="size-8 rounded-full bg-gray-700 overflow-hidden" data-alt="Portrait of CEO"
-                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSpVJoDfAD2RtLbUu7cs6JJxjFBVqjcWFXb94rbCPMWeV3VhQ_6Gx6c40-hAEFGVWBDiB74kYDHTxnSxcPO-Li_8FMskGKy73cZaW3y2WkmrZ6NEzhfJd4CwnwTWTPeymbKv-5I7Q37cCHbHsJV-Pb7kn4eS5ykVfz7bvQv2QvgLb3UoD-n5Q0SrKN5e4_RQXAk7qdIlyGELVs_sLkbNkGIreGa8HzFca4-pxFAHwLWnpUeq6x7dTYaCEDUWlaa7WEVMvv8pgvsOA'); background-size: cover;">
-                                </div>
-                                <span class="text-xs text-white">CEO, Vinaris</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Project 02 (Sismaqua Aligned Right on mobile) -->
+                    <!-- Project 02 -->
                     <a href="#"
-                        class="group cursor-pointer col-span-11 col-start-2 md:col-span-6 md:col-start-auto flex flex-col gap-4">
+                        class="group cursor-pointer w-[85vw] md:w-[700px] flex-shrink-0 snap-center flex flex-col gap-4">
                         <div class="relative overflow-hidden rounded bg-white aspect-[16/9]">
                             <img alt="Sismaqua Branding"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 src="/assets/sismaqua-branding.jpg" />
                         </div>
                         <div
-                            class="flex flex-row-reverse md:flex-row justify-between items-start border-t border-white/10 pt-4 text-right md:text-left">
+                            class="flex flex-row md:flex-row justify-between items-start border-t border-white/10 pt-4 text-left">
                             <div class="pr-2">
                                 <h3 class="text-text-off-white text-2xl font-bold mb-1">Sismaqua</h3>
                                 <p class="text-accent-blue text-sm">Water treatment // Branding</p>
                             </div>
                             <span
-                                class="material-symbols-outlined text-white text-sm md:text-base opacity-0 group-hover:opacity-100 translate-x-2 md:-translate-x-2 group-hover:translate-x-0 transition-all duration-300">arrow_outward</span>
+                                class="material-symbols-outlined text-white text-sm md:text-base opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">arrow_outward</span>
                         </div>
                     </a>
 
-                    <!-- Project 03 (Trampoleen Aligned Left on mobile) -->
+                    <!-- Project 03 -->
                     <a href="https://trampoleen.vercel.app/" target="_blank"
-                        class="group cursor-pointer col-span-11 md:col-span-6 flex flex-col gap-4">
+                        class="group cursor-pointer w-[85vw] md:w-[700px] flex-shrink-0 snap-center flex flex-col gap-4">
                         <div class="relative overflow-hidden rounded bg-[#0b1b36] aspect-[16/9] border border-white/10">
                             <img alt="Trampoleen - Creative Space"
                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
