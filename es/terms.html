@@ -120,18 +120,20 @@
                         href="/es/services.html">Servicios</a>
                     <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
                         href="/es/about.html">Nosotros</a>
+                </nav>
+                <div class="hidden md:flex items-center gap-6">
                     <a onclick="localStorage.setItem('pref-lang', 'en')"
                         class="text-text-off-white/60 hover:text-primary text-xs font-bold transition-colors uppercase tracking-widest cursor-pointer"
-                        href="/terms.html">EN</a>
-                </nav>
-                <button onclick="window.location.href='/es/contact.html'"
-                    class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
-                    <span
-                        class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Hablemos</span>
-                    <div
-                        class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                    </div>
-                </button>
+                        href="/terms.html">ENG</a>
+                    <button onclick="window.location.href='/es/contact.html'"
+                        class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
+                        <span
+                            class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Hablemos</span>
+                        <div
+                            class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                        </div>
+                    </button>
+                </div>
                 <!-- Mobile Menu Icon -->
                 <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
                     <span class="material-symbols-outlined">menu</span>
@@ -152,14 +154,14 @@
                 href="/es/services.html">Servicios</a>
             <a class="text-2xl font-bold text-text-off-white hover:text-primary transition-colors uppercase tracking-widest"
                 href="/es/about.html">Nosotros</a>
-            <a onclick="localStorage.setItem('pref-lang', 'en')"
-                class="text-xl font-bold text-accent-blue/60 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer mt-4"
-                href="/terms.html">EN</a>
         </nav>
         <button onclick="window.location.href='/es/contact.html'"
             class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300 flex-shrink-0">
             <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Hablemos</span>
         </button>
+        <a onclick="localStorage.setItem('pref-lang', 'en')"
+            class="text-xl font-bold text-accent-blue/60 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer mt-4"
+            href="/terms.html">ENG</a>
     </div>
 
     <!-- Main Content -->
