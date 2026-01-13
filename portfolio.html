@@ -92,7 +92,7 @@
             class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-1000 scale-105">
         </div>
         <!-- Overlay for legibility (Darker for subpages) -->
-        <div class="absolute inset-0 bg-black/90"></div>
+        <div class="absolute inset-0 bg-black/[0.85]"></div>
     </div>
 
     <div class="relative z-10 flex min-h-screen w-full flex-col overflow-x-hidden">
@@ -207,7 +207,7 @@
                         bgImage.style.backgroundImage = `url('${randomImage}')`;
                         bgImage.classList.remove('opacity-0');
                         // Low opacity for subpages as requested
-                        bgImage.classList.add('opacity-40');
+                        bgImage.classList.add('opacity-100');
                     };
                 }
             });
