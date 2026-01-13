@@ -235,34 +235,54 @@
                     </div>
                 </div>
             </section>
-            <div class="flex flex-col gap-12 px-6 md:px-12 pb-20 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-12 pb-20 max-w-[1440px] mx-auto">
                 <!-- Project 01 -->
                 <a href="http://www.vinaris.es" target="_blank" class="group cursor-pointer flex flex-col gap-6">
-                    <div class="relative overflow-hidden rounded bg-white aspect-[16/9] w-full shadow-sm">
+                    <div
+                        class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-white p-8 md:p-12">
                         <img alt="Vinaris Wine Distribution"
-                            class="w-full h-full object-contain p-12 transition-transform duration-700 group-hover:scale-105"
+                            class="w-full h-full object-contain transition-transform duration-700 ease-out origin-center block scale-125 md:scale-100 group-hover:scale-105"
                             src="/assets/vinaris-logo.jpg" />
+                        <!-- Hover Overlay Icon -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                            <span
+                                class="material-symbols-outlined text-white text-5xl drop-shadow-lg">arrow_outward</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
-                        <h3 class="text-text-off-white text-3xl font-bold group-hover:text-primary transition-colors">
-                            Vinaris</h3>
-                        <span
-                            class="material-symbols-outlined text-white text-2xl opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">arrow_outward</span>
+                    <div class="border-t border-accent-blue/30 pt-4 flex justify-between items-start">
+                        <div class="flex flex-col gap-1">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">Vinaris
+                            </h3>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Wine
+                                distribution</span>
+                        </div>
+                        <span class="text-accent-blue font-mono text-sm">01</span>
                     </div>
                 </a>
 
                 <!-- Project 02 -->
                 <article class="group cursor-pointer flex flex-col gap-6">
-                    <div class="relative overflow-hidden rounded bg-white aspect-[16/9] w-full shadow-sm">
+                    <div
+                        class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-accent-blue/5">
                         <img alt="Sismaqua Branding"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out origin-center block scale-125 md:scale-100 group-hover:scale-105"
                             src="/assets/sismaqua-branding.jpg" />
+                        <!-- Hover Overlay Icon -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                            <span
+                                class="material-symbols-outlined text-white text-5xl drop-shadow-lg">arrow_outward</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
-                        <h3 class="text-text-off-white text-3xl font-bold group-hover:text-primary transition-colors">
-                            Sismaqua</h3>
-                        <span
-                            class="material-symbols-outlined text-white text-2xl opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">arrow_outward</span>
+                    <div class="border-t border-accent-blue/30 pt-4 flex justify-between items-start">
+                        <div class="flex flex-col gap-1">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                                Sismaqua</h3>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Water
+                                treatment</span>
+                        </div>
+                        <span class="text-accent-blue font-mono text-sm">02</span>
                     </div>
                 </article>
 
@@ -270,26 +290,34 @@
                 <a href="https://trampoleen.vercel.app/" target="_blank"
                     class="group cursor-pointer flex flex-col gap-6">
                     <div
-                        class="relative overflow-hidden rounded bg-[#0b1b36] border border-white/10 aspect-[16/9] w-full shadow-sm">
+                        class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-[#0b1b36] border border-white/10">
                         <img alt="Trampoleen - Creative Space"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out origin-center block scale-125 md:scale-100 group-hover:scale-105"
                             src="/assets/trampoleen-logo.jpg" />
+                        <!-- Hover Overlay Icon -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                            <span
+                                class="material-symbols-outlined text-white text-5xl drop-shadow-lg">arrow_outward</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
-                        <h3 class="text-text-off-white text-3xl font-bold group-hover:text-primary transition-colors">
-                            Trampoleen</h3>
-                        <span
-                            class="material-symbols-outlined text-white text-2xl opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">arrow_outward</span>
+                    <div class="border-t border-accent-blue/30 pt-4 flex justify-between items-start">
+                        <div class="flex flex-col gap-1">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                                Trampoleen</h3>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Creative
+                                space</span>
+                        </div>
+                        <span class="text-accent-blue font-mono text-sm">03</span>
                     </div>
                 </a>
             </div>
-            </section>
 
             <!-- CTA Section -->
             <section
                 class="w-full max-w-[1440px] px-6 md:px-12 pt-16 pb-32 flex flex-col items-center text-center border-t border-white/10">
                 <div class="max-w-3xl relative">
-                    <h2 class="relative z-10 text-5xl md:text-7xl font-bold text-text-off-white tracking-tight mb-8">
+                    <h2 class="relative z-10 text-5xl md:text-6xl font-bold text-text-off-white tracking-tight mb-8">
                         Ready to start <br />
                         <span class="text-stroke text-transparent">the magic?</span>
                     </h2>
@@ -347,7 +375,8 @@
                                         href="https://x.com/Yumpeen" target="_blank" rel="noopener noreferrer">Twitter /
                                         X</a></li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="#">LinkedIn</a></li>
+                                        href="https://www.linkedin.com/company/yumpeen" target="_blank"
+                                        rel="noopener noreferrer">LinkedIn</a></li>
                             </ul>
                         </div>
                     </div>
