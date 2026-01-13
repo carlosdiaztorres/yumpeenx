@@ -93,6 +93,15 @@
 <body
     class="bg-background-light dark:bg-background-dark font-display antialiased selection:bg-primary selection:text-white">
 
+    <!-- Full Screen Hero Background (Fixed) -->
+    <div id="hero-bg-fixed" class="fixed inset-0 z-0 bg-background-dark overflow-hidden pointer-events-none">
+        <div id="hero-bg-image"
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-1000 scale-105">
+        </div>
+        <!-- Overlay for legibility (Darker for subpages) -->
+        <div class="absolute inset-0 bg-black/90"></div>
+    </div>
+
     <div class="relative z-10 flex min-h-screen w-full flex-col overflow-x-hidden">
         <!-- Navigation -->
         <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-white/5">
@@ -178,6 +187,35 @@
                     menuIcon.textContent = 'menu';
                     document.body.style.overflow = '';
                 });
+            });
+        </script>
+
+        <!-- Random Background Logic -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const images = [
+                    '/assets/hero-jump.webp',
+                    '/assets/hero-jump2.webp',
+                    '/assets/hero-jump3.webp',
+                    '/assets/hero-jump4.webp',
+                    '/assets/hero-jump5.webp',
+                    '/assets/hero-jump6.webp',
+                    '/assets/hero-jump7.webp',
+                    '/assets/hero-jump8.webp'
+                ];
+
+                const bgImage = document.getElementById('hero-bg-image');
+                if (bgImage) {
+                    const randomImage = images[Math.floor(Math.random() * images.length)];
+                    const img = new Image();
+                    img.src = randomImage;
+                    img.onload = () => {
+                        bgImage.style.backgroundImage = `url('${randomImage}')`;
+                        bgImage.classList.remove('opacity-0');
+                        // Low opacity for subpages
+                        bgImage.classList.add('opacity-20');
+                    };
+                }
             });
         </script>
 
@@ -464,8 +502,6 @@
                                     href="https://x.com/Yumpeen" target="_blank" rel="noopener noreferrer">Twitter /
                                     X</a></li>
                             <li><a class="text-accent-blue hover:text-primary transition-colors" href="#">LinkedIn</a>
-                            </li>
-                            <li><a class="text-accent-blue hover:text-primary transition-colors" href="#">Behance</a>
                             </li>
                         </ul>
                     </div>
