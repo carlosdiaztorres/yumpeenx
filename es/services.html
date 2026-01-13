@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Yumpeen studio | Servicios</title>
+    <!-- Language Selection -->
+    <script>
+        (function () {
+            localStorage.setItem('pref-lang', 'es');
+        })();
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo-red.png" />
+    <link rel="apple-touch-icon" href="/assets/logo-red.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef233c",
+                        "secondary": "#d90429",
+                        "background-light": "#edf2f4",
+                        "background-dark": "#031126",
+                        "text-off-white": "#edf2f4",
+                        "accent-blue": "#b2bec3",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                    backgroundImage: {
+                        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(3, 17, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #031126;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ed263d;
+        }
+
+        .service-row:hover .service-glow {
+            opacity: 1;
+        }
+
+        .service-row:hover .service-arrow {
+            transform: translate(4px, -4px);
+            color: #ef233c;
+        }
+
+        .service-row:hover h3 {
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display antialiased selection:bg-primary selection:text-white">
+
+    <!-- Full Screen Hero Background (Fixed) -->
+    <div id="hero-bg-fixed" class="fixed inset-0 z-0 bg-background-dark overflow-hidden pointer-events-none">
+        <div id="hero-bg-image"
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-1000 scale-105">
+        </div>
+        <!-- Overlay for legibility (Darker for subpages) -->
+        <div class="absolute inset-0 bg-black/[0.85]"></div>
+    </div>
+
+    <div class="relative z-10 flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-white/5">
+            <div class="layout-container flex justify-center w-full">
+                <div class="w-full max-w-[1440px] px-6 md:px-12 py-4 flex items-center justify-between">
+                    <a href="/" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+                        <img src="/assets/logo-red.png" alt="Yumpeen Logo" class="size-10 object-contain rounded">
+                        <h2 class="text-white text-2xl font-bold tracking-tight hover:text-primary transition-colors">
+                            Yumpeen.com</h2>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-10">
+                        <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="./index.html">Inicio</a>
+                        <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="./portfolio.html">Portfolio</a>
+                        <a class="text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="./services.html">Servicios</a>
+                        <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="./about.html">Nosotros</a>
+                        <a onclick="localStorage.setItem('pref-lang', 'en')"
+                            class="text-text-off-white/60 hover:text-primary text-xs font-bold transition-colors uppercase tracking-widest cursor-pointer"
+                            href="../services.html">EN</a>
+                    </nav>
+                    <button onclick="window.location.href='contact.html'"
+                        class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
+                        <span
+                            class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Hablemos</span>
+                        <div
+                            class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                        </div>
+                    </button>
+                    <!-- Mobile Menu Icon -->
+                    <button id="mobile-menu-btn" class="md:hidden text-white relative z-50">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 h-[100dvh] bg-background-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
+            <nav class="flex flex-col items-center gap-6">
+                <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                    href="./index.html">Inicio</a>
+                <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                    href="./portfolio.html">Portfolio</a>
+                <a class="text-2xl font-bold text-primary transition-colors uppercase tracking-widest"
+                    href="./services.html">Servicios</a>
+                <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                    href="./about.html">Nosotros</a>
+                <a onclick="localStorage.setItem('pref-lang', 'en')"
+                    class="text-xl font-bold text-accent-blue/60 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer mt-4"
+                    href="../services.html">EN</a>
+            </nav>
+            <button onclick="window.location.href='contact.html'"
+                class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300 flex-shrink-0">
+                <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Hablemos</span>
+            </button>
+        </div>
+
+        <script>
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuBtn.querySelector('span');
+            let isMenuOpen = false;
+
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                    menuIcon.textContent = 'close';
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    menuIcon.textContent = 'menu';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    menuIcon.textContent = 'menu';
+                    document.body.style.overflow = '';
+                });
+            });
+        </script>
+
+        <!-- Random Background Logic -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const images = [
+                    '/assets/hero-jump.webp',
+                    '/assets/hero-jump2.webp',
+                    '/assets/hero-jump3.webp',
+                    '/assets/hero-jump4.webp',
+                    '/assets/hero-jump5.webp',
+                    '/assets/hero-jump6.webp',
+                    '/assets/hero-jump7.webp',
+                    '/assets/hero-jump8.webp'
+                ];
+
+                const bgImage = document.getElementById('hero-bg-image');
+                if (bgImage) {
+                    const randomImage = images[Math.floor(Math.random() * images.length)];
+                    const img = new Image();
+                    img.src = randomImage;
+                    img.onload = () => {
+                        bgImage.style.backgroundImage = `url('${randomImage}')`;
+                        bgImage.classList.remove('opacity-0');
+                        // Low opacity for subpages
+                        bgImage.classList.add('opacity-100');
+                    };
+                }
+            });
+        </script>
+
+        <main class="flex-grow pt-32 px-6 md:px-12 pb-20 max-w-[1440px] mx-auto w-full">
+            <!-- Page Heading -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6 pb-8">
+                <div class="max-w-2xl">
+                    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-6">
+                        <span
+                            class="text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">Nuestra</span><br />
+                        <span class="text-primary">experiencia</span>
+                    </h1>
+                </div>
+                <div class="md:text-right max-w-sm md:max-w-2xl md:self-end md:pb-6">
+                    <p class="text-accent-blue text-lg leading-relaxed font-light">
+                        Soluciones digitales premium impulsadas por la estrategia y la innovación técnica. Creamos
+                        experiencias que definen marcas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Services List -->
+            <div class="flex flex-col">
+                <!-- Service Item 01 -->
+                <div
+                    class="service-row group relative border-t border-accent-blue/30 py-12 md:py-16 transition-all duration-300 hover:border-primary/50 cursor-pointer overflow-hidden">
+                    <div
+                        class="service-glow absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 transition-opacity duration-500 ease-out pointer-events-none -z-10">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start relative z-10">
+                        <div class="col-span-1 md:col-span-2">
+                            <span class="text-primary font-mono text-xl md:text-2xl">01/</span>
+                        </div>
+                        <div class="col-span-1 md:col-span-6">
+                            <h3
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4 transition-all duration-300 text-white">
+                                Estrategia Digital</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 opacity-60">
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Análisis
+                                    de mercado</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Posicionamiento</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Hoja
+                                    de ruta</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4 flex flex-col justify-between h-full">
+                            <p class="text-accent-blue text-lg font-light leading-relaxed max-w-md">
+                                Analizamos las dinámicas del mercado para posicionar tu marca hacia el éxito. Un plan
+                                maestro para un crecimiento digital sostenible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 02 -->
+                <div
+                    class="service-row group relative border-t border-accent-blue/30 py-12 md:py-16 transition-all duration-300 hover:border-primary/50 cursor-pointer overflow-hidden">
+                    <div
+                        class="service-glow absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 transition-opacity duration-500 ease-out pointer-events-none -z-10">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start relative z-10">
+                        <div class="col-span-1 md:col-span-2">
+                            <span class="text-primary font-mono text-xl md:text-2xl">02/</span>
+                        </div>
+                        <div class="col-span-1 md:col-span-6">
+                            <h3
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4 transition-all duration-300 text-white">
+                                Diseño UI/UX</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 opacity-60">
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Estructura</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Prototipado</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Sistemas
+                                    de diseño</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4 flex flex-col justify-between h-full">
+                            <p class="text-accent-blue text-lg font-light leading-relaxed max-w-md">
+                                Interfaces centradas en el usuario que mezclan estética brutalista con funcionalidad
+                                intuitiva. Diseño que convierte.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 03 -->
+                <div
+                    class="service-row group relative border-t border-accent-blue/30 py-12 md:py-16 transition-all duration-300 hover:border-primary/50 cursor-pointer overflow-hidden">
+                    <div
+                        class="service-glow absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 transition-opacity duration-500 ease-out pointer-events-none -z-10">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start relative z-10">
+                        <div class="col-span-1 md:col-span-2">
+                            <span class="text-primary font-mono text-xl md:text-2xl">03/</span>
+                        </div>
+                        <div class="col-span-1 md:col-span-6">
+                            <h3
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4 transition-all duration-300 text-white">
+                                Desarrollo Web</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 opacity-60">
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Frontend</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Backend</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Gestores
+                                    (CMS)</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4 flex flex-col justify-between h-full">
+                            <p class="text-accent-blue text-lg font-light leading-relaxed max-w-md">
+                                Ingeniería robusta utilizando frameworks modernos. Infraestructura digital rápida,
+                                segura y escalable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 04 -->
+                <div
+                    class="service-row group relative border-t border-accent-blue/30 py-12 md:py-16 transition-all duration-300 hover:border-primary/50 cursor-pointer overflow-hidden">
+                    <div
+                        class="service-glow absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 transition-opacity duration-500 ease-out pointer-events-none -z-10">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start relative z-10">
+                        <div class="col-span-1 md:col-span-2">
+                            <span class="text-primary font-mono text-xl md:text-2xl">04/</span>
+                        </div>
+                        <div class="col-span-1 md:col-span-6">
+                            <h3
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4 transition-all duration-300 text-white">
+                                Motion Graphics</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 opacity-60">
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Animación
+                                    3D</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Efectos
+                                    (VFX)</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Interacción</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4 flex flex-col justify-between h-full">
+                            <p class="text-accent-blue text-lg font-light leading-relaxed max-w-md">
+                                Añadimos la dimensión del tiempo al diseño. Movimiento de alta fidelidad que cautiva y
+                                explica ideas complejas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 05 -->
+                <div
+                    class="service-row group relative border-t border-accent-blue/30 py-12 md:py-16 transition-all duration-300 hover:border-primary/50 cursor-pointer overflow-hidden">
+                    <div
+                        class="service-glow absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 transition-opacity duration-500 ease-out pointer-events-none -z-10">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start relative z-10">
+                        <div class="col-span-1 md:col-span-2">
+                            <span class="text-primary font-mono text-xl md:text-2xl">05/</span>
+                        </div>
+                        <div class="col-span-1 md:col-span-6">
+                            <h3
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4 transition-all duration-300 text-white">
+                                Identidad de Marca</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 opacity-60">
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Diseño
+                                    de Logo</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Sistemas
+                                    Visuales</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Guías
+                                    de estilo</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4 flex flex-col justify-between h-full">
+                            <p class="text-accent-blue text-lg font-light leading-relaxed max-w-md">
+                                Forjamos identidades visuales memorables. Sistemas integrales que aseguran la
+                                consistencia en todos los puntos de contacto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 06 -->
+                <div
+                    class="service-row group relative border-t border-b border-accent-blue/30 py-12 md:py-16 transition-all duration-300 hover:border-primary/50 cursor-pointer overflow-hidden">
+                    <div
+                        class="service-glow absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 transition-opacity duration-500 ease-out pointer-events-none -z-10">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start relative z-10">
+                        <div class="col-span-1 md:col-span-2">
+                            <span class="text-primary font-mono text-xl md:text-2xl">06/</span>
+                        </div>
+                        <div class="col-span-1 md:col-span-6">
+                            <h3
+                                class="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4 transition-all duration-300 text-white">
+                                IA Generativa</h3>
+                            <div class="flex flex-wrap gap-2 mt-4 opacity-60">
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Modelos
+                                    LLM</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Arte
+                                    Generativo</span>
+                                <span
+                                    class="px-3 py-1 border border-white/20 rounded-full text-xs uppercase tracking-wider text-white">Automatización</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4 flex flex-col justify-between h-full">
+                            <p class="text-accent-blue text-lg font-light leading-relaxed max-w-md">
+                                Preparamos tu contenido para el futuro. Aprovechamos modelos de IA de vanguardia para la
+                                eficiencia y resultados creativos únicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- CTA Section -->
+        <section
+            class="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-16 pb-32 flex flex-col items-center text-center border-t border-white/10">
+            <div class="max-w-3xl relative">
+                <h2 class="relative z-10 text-5xl md:text-6xl font-bold text-text-off-white tracking-tight mb-8">
+                    ¿Listos para escalar <br />
+                    <span class="text-stroke text-transparent">juntos?</span>
+                </h2>
+                <p class="relative z-10 text-accent-blue text-lg mb-12 max-w-xl mx-auto">
+                    Alcancemos nuevas alturas.
+                </p>
+                <div class="relative z-10">
+                    <button onclick="window.location.href='contact.html'"
+                        class="relative overflow-hidden rounded bg-primary text-white text-lg font-bold tracking-wider uppercase h-16 px-12 transition-all group">
+                        <span class="relative z-10 flex items-center gap-3">
+                            Hablemos
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full border-t border-white/10 bg-black/40 pt-16 pb-8">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="col-span-1 md:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-6">Yumpeen.com</h3>
+                        <p class="text-accent-blue max-w-xs">
+                            Un estudio digital que crea experiencias donde convergen el arte, la tecnología y la
+                            estrategia.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Mapa del sitio</h4>
+                        <ul class="space-y-3">
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./index.html">Inicio</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./portfolio.html">Portfolio</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./services.html">Servicios</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./about.html">Nosotros</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./contact.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Sociales</h4>
+                        <ul class="space-y-3">
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="https://www.instagram.com/yumpeen/" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a></li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="https://x.com/Yumpeen" target="_blank" rel="noopener noreferrer">Twitter /
+                                    X</a></li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="https://www.linkedin.com/company/yumpeen" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+                    <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. Todos los derechos reservados.</p>
+                    <div class="flex gap-6">
+                        <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                            href="privacy.html">Privacidad</a>
+                        <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                            href="terms.html">Condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -6,18 +6,10 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Yumpeen studio</title>
-    <!-- Language Redirection -->
+    <!-- Language Selection -->
     <script>
         (function () {
-            const userLang = navigator.language || navigator.userLanguage;
-            const storedLang = localStorage.getItem('pref-lang');
-            if (storedLang === 'en') return;
-            if (storedLang === 'es' || (!storedLang && userLang.startsWith('es'))) {
-                const path = window.location.pathname;
-                if (!path.startsWith('/es/')) {
-                    window.location.pathname = '/es' + (path === '/' ? '/index.html' : path);
-                }
-            }
+            localStorage.setItem('pref-lang', 'es');
         })();
     </script>
     <!-- Favicon -->
@@ -139,18 +131,17 @@
                         <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
                             href="./portfolio.html">Portfolio</a>
                         <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                            href="./services.html">Services</a>
+                            href="./services.html">Servicios</a>
                         <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                            href="./about.html">About us</a>
-                        <a onclick="localStorage.setItem('pref-lang', 'es')"
+                            href="./about.html">Nosotros</a>
+                        <a onclick="localStorage.setItem('pref-lang', 'en')"
                             class="text-text-off-white/60 hover:text-primary text-xs font-bold transition-colors uppercase tracking-widest cursor-pointer"
-                            href="./es/index.html">ES</a>
+                            href="../index.html">EN</a>
                     </nav>
                     <button onclick="window.location.href='contact.html'"
                         class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
                         <span
-                            class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Let's
-                            Talk</span>
+                            class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Hablemos</span>
                         <div
                             class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                         </div>
@@ -167,20 +158,21 @@
         <div id="mobile-menu"
             class="fixed inset-0 h-[100dvh] bg-background-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
             <nav class="flex flex-col items-center gap-6">
-                <a class="text-2xl font-bold text-primary transition-colors uppercase tracking-widest" href="/">Home</a>
+                <a class="text-2xl font-bold text-primary transition-colors uppercase tracking-widest"
+                    href="./index.html">Inicio</a>
                 <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
                     href="./portfolio.html">Portfolio</a>
                 <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                    href="./services.html">Services</a>
+                    href="./services.html">Servicios</a>
                 <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                    href="./about.html">About us</a>
-                <a onclick="localStorage.setItem('pref-lang', 'es')"
+                    href="./about.html">Nosotros</a>
+                <a onclick="localStorage.setItem('pref-lang', 'en')"
                     class="text-xl font-bold text-accent-blue/60 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer mt-4"
-                    href="./es/index.html">ES</a>
+                    href="../index.html">EN</a>
             </nav>
             <button onclick="window.location.href='contact.html'"
                 class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300 flex-shrink-0">
-                <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Let's Talk</span>
+                <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Hablemos</span>
             </button>
         </div>
 
@@ -226,36 +218,35 @@
                             <h1
                                 class="text-text-off-white text-5xl md:text-8xl lg:text-[7.5rem] font-bold leading-[0.85] tracking-tighter drop-shadow-2xl">
                                 <span
-                                    class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">We
-                                    Don't</span>
+                                    class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">No
+                                    solo</span>
                                 <span
-                                    class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">Just
-                                    Walk,</span>
+                                    class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">caminamos,</span>
                                 <span class="block text-primary mt-2">We Yump.</span>
                             </h1>
                         </div>
                         <div class="h-px w-24 bg-primary/50"></div>
                         <p class="text-accent-blue text-lg md:text-xl font-light max-w-2xl leading-relaxed">
-                            Elevating brands through radical digital transformation. We blend brutalist architecture
-                            with fluid user experiences.
+                            Elevamos marcas a través de una transformación digital radical. Fusionamos arquitectura
+                            brutalista con experiencias de usuario fluidas.
                         </p>
-                        <div class="flex items-center gap-6 mt-4">
-                        </div>
                     </div>
                 </div>
             </section>
+
             <!-- Selected Works Header -->
             <section class="w-full max-w-[1440px] px-6 md:px-12 pt-0 pb-10">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                     <div>
                         <a href="./portfolio.html"
-                            class="text-primary text-xs font-bold uppercase tracking-widest mb-2 block hover:text-primary">Visit
-                            our portfolio for more</a>
-                        <h2 class="text-text-off-white text-4xl md:text-5xl font-bold tracking-tight">Our work
+                            class="text-primary text-xs font-bold uppercase tracking-widest mb-2 block hover:text-primary">Visita
+                            nuestro portfolio</a>
+                        <h2 class="text-text-off-white text-4xl md:text-5xl font-bold tracking-tight">Proyectos
                         </h2>
                     </div>
                 </div>
             </section>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-12 pb-20 max-w-[1440px] mx-auto w-full">
                 <!-- Project 01 -->
                 <a href="http://www.vinaris.es" target="_blank" class="group cursor-pointer flex flex-col gap-6">
@@ -274,8 +265,8 @@
                         <div class="flex flex-col gap-1">
                             <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">Vinaris
                             </h3>
-                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Wine
-                                distribution</span>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Distribución de
+                                vinos</span>
                         </div>
                         <span class="text-accent-blue font-mono text-sm">01</span>
                     </div>
@@ -299,8 +290,8 @@
                         <div class="flex flex-col gap-1">
                             <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
                                 Sismaqua</h3>
-                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Water
-                                treatment</span>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Tratamiento de
+                                aguas</span>
                         </div>
                         <span class="text-accent-blue font-mono text-sm">02</span>
                     </div>
@@ -325,8 +316,8 @@
                         <div class="flex flex-col gap-1">
                             <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
                                 Trampoleen</h3>
-                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Creative
-                                space</span>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Espacio
+                                creativo</span>
                         </div>
                         <span class="text-accent-blue font-mono text-sm">03</span>
                     </div>
@@ -338,18 +329,18 @@
                 class="relative z-10 w-full max-w-[1440px] px-6 md:px-12 pt-16 pb-32 flex flex-col items-center text-center border-t border-white/10">
                 <div class="max-w-3xl relative">
                     <h2 class="relative z-10 text-5xl md:text-6xl font-bold text-text-off-white tracking-tight mb-8">
-                        Ready to start <br />
-                        <span class="text-stroke text-transparent">the magic?</span>
+                        ¿Listo para <br />
+                        <span class="text-stroke text-transparent">saltar?</span>
                     </h2>
                     <p class="relative z-10 text-accent-blue text-lg mb-12 max-w-xl mx-auto">
-                        We partner with ambitious brands to build digital products that define the future. Don't settle
-                        for walking.
+                        Colaboramos con marcas ambiciosas para construir productos digitales que definen el futuro. No
+                        te conformes con caminar.
                     </p>
                     <div class="relative z-10">
                         <button onclick="window.location.href='contact.html'"
                             class="relative overflow-hidden rounded bg-primary text-white text-lg font-bold tracking-wider uppercase h-16 px-12 transition-all group">
                             <span class="relative z-10 flex items-center gap-3">
-                                Let's talk
+                                Hablemos
                                 <span
                                     class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
                             </span>
@@ -364,25 +355,26 @@
                         <div class="col-span-1 md:col-span-2">
                             <h3 class="text-2xl font-bold text-white mb-6">Yumpeen.com</h3>
                             <p class="text-accent-blue max-w-xs">
-                                A digital studio crafting experiences that merge art, technology, and strategy.
+                                Un estudio digital que crea experiencias donde convergen el arte, la tecnología y la
+                                estrategia.
                             </p>
                         </div>
                         <div>
-                            <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Sitemap</h4>
+                            <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Mapa del sitio</h4>
                             <ul class="space-y-3">
-                                <li><a class="text-accent-blue hover:text-primary transition-colors" href="/">Home</a>
+                                <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                        href="./index.html">Inicio</a>
                                 </li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
                                         href="./portfolio.html">Portfolio</a>
                                 </li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./services.html">Services</a></li>
+                                        href="./services.html">Servicios</a></li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./about.html">About
-                                        us</a>
+                                        href="./about.html">Nosotros</a>
                                 </li>
                                 <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./contact.html">Contact</a></li>
+                                        href="./contact.html">Contacto</a></li>
                             </ul>
                         </div>
                         <div>
@@ -402,12 +394,12 @@
                     </div>
                     <div
                         class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
-                        <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. All rights reserved.</p>
+                        <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. Todos los derechos reservados.</p>
                         <div class="flex gap-6">
-                            <a class="text-accent-blue/50 hover:text-primary text-sm" href="privacy.html">Privacy
-                                policy</a>
-                            <a class="text-accent-blue/50 hover:text-primary text-sm" href="terms.html">Terms of
-                                service</a>
+                            <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                                href="privacy.html">Privacidad</a>
+                            <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                                href="terms.html">Condiciones</a>
                         </div>
                     </div>
                 </div>

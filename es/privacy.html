@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark" lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Privacy Policy // Yumpeen studio</title>
+    <title>Política de Privacidad // Yumpeen studio</title>
+    <!-- Language Logic -->
+    <script>
+        (function () {
+            const storedLang = localStorage.getItem('pref-lang');
+            if (storedLang === 'en') {
+                const path = window.location.pathname;
+                if (path.startsWith('/es/')) {
+                    window.location.pathname = path.replace('/es/', '/');
+                }
+            }
+        })();
+    </script>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/logo-red.png" />
     <link rel="apple-touch-icon" href="/assets/logo-red.png" />
@@ -94,29 +106,28 @@
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-white/5">
         <div class="layout-container flex justify-center w-full">
             <div class="w-full max-w-[1440px] px-6 md:px-12 py-4 flex items-center justify-between">
-                <a href="/" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+                <a href="/es/index.html" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
                     <img src="/assets/logo-red.png" alt="Yumpeen Logo" class="size-10 object-contain rounded">
                     <h2 class="text-white text-2xl font-bold tracking-tight hover:text-primary transition-colors">
                         Yumpeen.com</h2>
                 </a>
                 <nav class="hidden md:flex items-center gap-10">
                     <a class="text-text-off-white/70 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="/">Home</a>
+                        href="/es/index.html">Inicio</a>
                     <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="./portfolio.html">Portfolio</a>
+                        href="/es/portfolio.html">Portfolio</a>
                     <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="./services.html">Services</a>
+                        href="/es/services.html">Servicios</a>
                     <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                        href="./about.html">About us</a>
-                    <a onclick="localStorage.setItem('pref-lang', 'es')"
+                        href="/es/about.html">Sobre nosotros</a>
+                    <a onclick="localStorage.setItem('pref-lang', 'en')"
                         class="text-text-off-white/60 hover:text-primary text-xs font-bold transition-colors uppercase tracking-widest cursor-pointer"
-                        href="./es/privacy.html">ES</a>
+                        href="/privacy.html">EN</a>
                 </nav>
-                <button onclick="window.location.href='contact.html'"
+                <button onclick="window.location.href='/es/contact.html'"
                     class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
                     <span
-                        class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Let's
-                        Talk</span>
+                        class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Hablemos</span>
                     <div
                         class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                     </div>
@@ -134,20 +145,20 @@
         class="fixed inset-0 h-[100dvh] bg-background-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
         <nav class="flex flex-col items-center gap-6">
             <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                href="/">Home</a>
+                href="/es/index.html">Inicio</a>
             <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                href="./portfolio.html">Portfolio</a>
+                href="/es/portfolio.html">Portfolio</a>
             <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                href="./services.html">Services</a>
+                href="/es/services.html">Servicios</a>
             <a class="text-2xl font-bold text-text-off-white hover:text-primary transition-colors uppercase tracking-widest"
-                href="./about.html">About us</a>
-            <a onclick="localStorage.setItem('pref-lang', 'es')"
+                href="/es/about.html">Sobre nosotros</a>
+            <a onclick="localStorage.setItem('pref-lang', 'en')"
                 class="text-xl font-bold text-accent-blue/60 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer mt-4"
-                href="./es/privacy.html">ES</a>
+                href="/privacy.html">EN</a>
         </nav>
-        <button onclick="window.location.href='contact.html'"
+        <button onclick="window.location.href='/es/contact.html'"
             class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300 flex-shrink-0">
-            <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Let's Talk</span>
+            <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Hablemos</span>
         </button>
     </div>
 
@@ -157,18 +168,18 @@
 
             <!-- Page Header -->
             <div class="mb-12">
-                <h1 class="text-5xl md:text-6xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <h1 class="text-5xl md:text-6xl font-bold text-white tracking-tight mb-4">Política de Privacidad</h1>
                 <div class="flex items-center gap-4 text-accent-blue/80 text-sm md:text-base">
-                    <!-- Date Removed as requested -->
                 </div>
             </div>
 
             <!-- Intro -->
             <div class="text-text-off-white text-lg md:text-xl font-light leading-relaxed mb-10">
                 <p>
-                    At Yumpeen, we value your trust and are committed to protecting your privacy. We design digital
-                    experiences with integrity, and that extends to how we handle your data. This policy outlines
-                    exactly how we collect, use, and safeguard your personal information in plain language.
+                    En Yumpeen, valoramos tu confianza y estamos comprometidos a proteger tu privacidad. Diseñamos
+                    experiencias digitales con integridad, y eso se extiende a cómo manejamos tus datos. Esta política
+                    describe exactamente cómo recopilamos, usamos y protegemos tu información personal en un lenguaje
+                    claro.
                 </p>
             </div>
 
@@ -177,18 +188,19 @@
                 <div class="flex items-start gap-4 mb-6">
                     <span
                         class="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-accent-blue text-xs font-mono">01</span>
-                    <h2 class="text-2xl font-bold text-white">Data collection</h2>
+                    <h2 class="text-2xl font-bold text-white">Recopilación de datos</h2>
                 </div>
                 <div class="pl-12 space-y-6 text-accent-blue leading-relaxed">
                     <p>
-                        We collect information you provide directly to us when you request a project proposal, subscribe
-                        to our insights, or communicate with us via third-party platforms. This may include your name,
-                        email address, company details, and project budget.
+                        Recopilamos información que nos proporcionas directamente cuando solicitas una propuesta de
+                        proyecto, te suscribes a nuestras novedades o te comunicas con nosotros a través de plataformas
+                        de terceros. Esto puede incluir tu nombre, dirección de correo electrónico, detalles de la
+                        empresa y presupuesto del proyecto.
                     </p>
                     <p>
-                        Additionally, we automatically collect certain data when you visit our website, such as your IP
-                        address, browser type, operating system, and interaction metrics. This helps us optimize our
-                        digital performance and ensure security.
+                        Además, recopilamos automáticamente ciertos datos cuando visitas nuestro sitio web, como tu
+                        dirección IP, tipo de navegador, sistema operativo y métricas de interacción. Esto nos ayuda a
+                        optimizar nuestro rendimiento digital y garantizar la seguridad.
                     </p>
                 </div>
             </section>
@@ -198,19 +210,21 @@
                 <div class="flex items-start gap-4 mb-6">
                     <span
                         class="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-accent-blue text-xs font-mono">02</span>
-                    <h2 class="text-2xl font-bold text-white">Use of information</h2>
+                    <h2 class="text-2xl font-bold text-white">Uso de la información</h2>
                 </div>
                 <div class="pl-12 space-y-6 text-accent-blue leading-relaxed">
                     <p>
-                        The data we collect is used primarily to provide and improve our services. Specifically, we use
-                        your information to:
+                        Los datos que recopilamos se utilizan principalmente para proporcionar y mejorar nuestros
+                        servicios. Específicamente, utilizamos tu información para:
                     </p>
                     <ul class="list-disc pl-5 space-y-2 marker:text-primary">
-                        <li>Process and manage your agency projects and service requests.</li>
-                        <li>Send you technical notices, updates, security alerts, and administrative messages.</li>
-                        <li>Analyze trends, usage, and activities in connection with our services to improve user
-                            experience.</li>
-                        <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities.</li>
+                        <li>Procesar y gestionar tus proyectos de agencia y solicitudes de servicio.</li>
+                        <li>Enviarte avisos técnicos, actualizaciones, alertas de seguridad y mensajes administrativos.
+                        </li>
+                        <li>Analizar tendencias, uso y actividades en relación con nuestros servicios para mejorar la
+                            experiencia del usuario.</li>
+                        <li>Detectar, investigar y prevenir transacciones fraudulentas y otras actividades ilegales.
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -220,22 +234,22 @@
                 <div class="flex items-start gap-4 mb-6">
                     <span
                         class="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-accent-blue text-xs font-mono">03</span>
-                    <h2 class="text-2xl font-bold text-white">Cookies &amp; tracking</h2>
+                    <h2 class="text-2xl font-bold text-white">Cookies y seguimiento</h2>
                 </div>
                 <div class="pl-12 space-y-6 text-accent-blue leading-relaxed">
                     <p>
-                        We use cookies and similar tracking technologies to track the activity on our service and hold
-                        certain information. Cookies are files with small amount of data which may include an anonymous
-                        unique identifier.
+                        Utilizamos cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro
+                        servicio y mantener cierta información. Las cookies son archivos con una pequeña cantidad de
+                        datos que pueden incluir un identificador único anónimo.
                     </p>
                     <div class="bg-white/5 rounded-xl p-6 border border-white/10 mt-4">
                         <div class="flex items-center gap-3 mb-3">
                             <span class="material-symbols-outlined text-primary">cookie</span>
-                            <h4 class="text-white font-bold text-sm">Cookie preferences</h4>
+                            <h4 class="text-white font-bold text-sm">Preferencias de cookies</h4>
                         </div>
-                        <p class="text-sm mb-4">You can instruct your browser to refuse all cookies or to indicate when
-                            a cookie is being sent. However, if you do not accept cookies, you may not be able to use
-                            some portions of our Service.</p>
+                        <p class="text-sm mb-4">Puedes configurar tu navegador para rechazar todas las cookies o para
+                            indicar cuándo se envía una cookie. Sin embargo, si no aceptas cookies, es posible que no
+                            puedas utilizar algunas partes de nuestro Servicio.</p>
                     </div>
                 </div>
             </section>
@@ -245,17 +259,18 @@
                 <div class="flex items-start gap-4 mb-6">
                     <span
                         class="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-accent-blue text-xs font-mono">04</span>
-                    <h2 class="text-2xl font-bold text-white">Your rights</h2>
+                    <h2 class="text-2xl font-bold text-white">Tus derechos</h2>
                 </div>
                 <div class="pl-12 space-y-6 text-accent-blue leading-relaxed">
                     <p>
-                        Under applicable data protection laws, you have rights regarding your personal data. You have
-                        the right to access, correct, update, or request deletion of your personal information.
+                        Según las leyes de protección de datos aplicables, tienes derechos con respecto a tus datos
+                        personales. Tienes el derecho de acceder, corregir, actualizar o solicitar la eliminación de tu
+                        información personal.
                     </p>
                     <p>
-                        If you are a resident of the European Economic Area (EEA), you have additional data protection
-                        rights. Yumpeen aims to take reasonable steps to allow you to correct, amend, delete, or limit
-                        the use of your Personal Data.
+                        Si eres residente del Espacio Económico Europeo (EEE), tienes derechos adicionales de protección
+                        de datos. Yumpeen tiene como objetivo tomar medidas razonables para permitirte corregir,
+                        enmendar, eliminar o limitar el uso de tus datos personales.
                     </p>
                 </div>
             </section>
@@ -269,25 +284,26 @@
                 <div class="col-span-1 md:col-span-2">
                     <h3 class="text-2xl font-bold text-white mb-6">Yumpeen.com</h3>
                     <p class="text-accent-blue max-w-xs">
-                        A digital studio crafting experiences that merge art, technology, and strategy.
+                        Un estudio digital que crea experiencias fusionando arte, tecnología y estrategia.
                     </p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Sitemap</h4>
                     <ul class="space-y-3">
-                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="/">Home</a></li>
                         <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                href="./portfolio.html">Portfolio</a></li>
+                                href="/es/index.html">Inicio</a></li>
                         <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                href="./services.html">Services</a></li>
-                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="./about.html">About
-                                us</a></li>
+                                href="/es/portfolio.html">Portfolio</a></li>
                         <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                href="./contact.html">Contact</a></li>
+                                href="/es/services.html">Servicios</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors" href="/es/about.html">Sobre
+                                nosotros</a></li>
+                        <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                href="/es/contact.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Socials</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Redes</h4>
                     <ul class="space-y-3">
                         <li><a class="text-accent-blue hover:text-primary transition-colors"
                                 href="https://www.instagram.com/yumpeen/" target="_blank"
@@ -304,12 +320,12 @@
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
-                <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. All rights reserved.</p>
+                <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. Todos los derechos reservados.</p>
                 <div class="flex gap-6">
                     <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
-                        href="privacy.html">Privacy policy</a>
-                    <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors" href="terms.html">Terms
-                        of service</a>
+                        href="/es/privacy.html">Política de privacidad</a>
+                    <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                        href="/es/terms.html">Términos de servicio</a>
                 </div>
             </div>
         </div>

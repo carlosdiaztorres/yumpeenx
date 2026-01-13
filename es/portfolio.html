@@ -1,23 +1,14 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Yumpeen studio</title>
-    <!-- Language Redirection -->
+    <title>Yumpeen studio | Portfolio</title>
+    <!-- Language Selection -->
     <script>
         (function () {
-            const userLang = navigator.language || navigator.userLanguage;
-            const storedLang = localStorage.getItem('pref-lang');
-            if (storedLang === 'en') return;
-            if (storedLang === 'es' || (!storedLang && userLang.startsWith('es'))) {
-                const path = window.location.pathname;
-                if (!path.startsWith('/es/')) {
-                    window.location.pathname = '/es' + (path === '/' ? '/index.html' : path);
-                }
-            }
+            localStorage.setItem('pref-lang', 'es');
         })();
     </script>
     <!-- Favicon -->
@@ -45,7 +36,7 @@
                         "primary": "#ef233c", // Punch Red
                         "secondary": "#d90429", // Flag Red
                         "background-light": "#edf2f4", // Platinum
-                        "background-dark": "#031126", // Reverted to original dark blue
+                        "background-dark": "#031126",
                         "text-off-white": "#edf2f4", // Platinum
                         "accent-blue": "#b2bec3", // Lightened Lavender Grey
                     },
@@ -95,32 +86,19 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ed263d;
         }
-
-        /* Scrollbar hide */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            /* IE and Edge */
-            scrollbar-width: none;
-            /* Firefox */
-        }
     </style>
 </head>
 
 <body
     class="bg-background-light dark:bg-background-dark font-display antialiased selection:bg-primary selection:text-white">
-    <!-- Noise Texture Overlay -->
 
-    <!-- Full Screen Hero Background -->
-    <div id="hero-bg-fixed" class="fixed inset-0 z-0 bg-background-dark overflow-hidden">
+    <!-- Full Screen Hero Background (Fixed) -->
+    <div id="hero-bg-fixed" class="fixed inset-0 z-0 bg-background-dark overflow-hidden pointer-events-none">
         <div id="hero-bg-image"
             class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-1000 scale-105">
         </div>
-        <!-- Overlay for legibility only -->
-        <div class="absolute inset-0 bg-black/75"></div>
+        <!-- Overlay for legibility (Darker for subpages) -->
+        <div class="absolute inset-0 bg-black/[0.85]"></div>
     </div>
 
     <div class="relative z-10 flex min-h-screen w-full flex-col overflow-x-hidden">
@@ -134,23 +112,22 @@
                             Yumpeen.com</h2>
                     </a>
                     <nav class="hidden md:flex items-center gap-10">
-                        <a class="text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                            href="/">Home</a>
                         <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
+                            href="./index.html">Inicio</a>
+                        <a class="text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
                             href="./portfolio.html">Portfolio</a>
                         <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                            href="./services.html">Services</a>
+                            href="./services.html">Servicios</a>
                         <a class="text-text-off-white/80 hover:text-primary text-sm font-medium transition-colors uppercase tracking-widest text-[11px]"
-                            href="./about.html">About us</a>
-                        <a onclick="localStorage.setItem('pref-lang', 'es')"
+                            href="./about.html">Nosotros</a>
+                        <a onclick="localStorage.setItem('pref-lang', 'en')"
                             class="text-text-off-white/60 hover:text-primary text-xs font-bold transition-colors uppercase tracking-widest cursor-pointer"
-                            href="./es/index.html">ES</a>
+                            href="../portfolio.html">EN</a>
                     </nav>
                     <button onclick="window.location.href='contact.html'"
                         class="hidden md:flex group relative overflow-hidden rounded bg-transparent border border-white/20 hover:border-primary px-6 py-2 transition-colors duration-300">
                         <span
-                            class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Let's
-                            Talk</span>
+                            class="relative z-10 text-white text-xs font-bold uppercase tracking-wider group-hover:text-white transition-colors duration-300">Hablemos</span>
                         <div
                             class="absolute inset-0 bg-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                         </div>
@@ -167,20 +144,21 @@
         <div id="mobile-menu"
             class="fixed inset-0 h-[100dvh] bg-background-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-opacity duration-300 overflow-y-auto">
             <nav class="flex flex-col items-center gap-6">
-                <a class="text-2xl font-bold text-primary transition-colors uppercase tracking-widest" href="/">Home</a>
                 <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
+                    href="./index.html">Inicio</a>
+                <a class="text-2xl font-bold text-primary transition-colors uppercase tracking-widest"
                     href="./portfolio.html">Portfolio</a>
                 <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                    href="./services.html">Services</a>
+                    href="./services.html">Servicios</a>
                 <a class="text-2xl font-bold text-white hover:text-primary transition-colors uppercase tracking-widest"
-                    href="./about.html">About us</a>
-                <a onclick="localStorage.setItem('pref-lang', 'es')"
+                    href="./about.html">Nosotros</a>
+                <a onclick="localStorage.setItem('pref-lang', 'en')"
                     class="text-xl font-bold text-accent-blue/60 hover:text-primary transition-colors uppercase tracking-widest cursor-pointer mt-4"
-                    href="./es/index.html">ES</a>
+                    href="../portfolio.html">EN</a>
             </nav>
             <button onclick="window.location.href='contact.html'"
                 class="group relative overflow-hidden rounded bg-primary border border-primary px-8 py-3 transition-colors duration-300 flex-shrink-0">
-                <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Let's Talk</span>
+                <span class="relative z-10 text-white text-sm font-bold uppercase tracking-wider">Hablemos</span>
             </button>
         </div>
 
@@ -216,49 +194,60 @@
                 });
             });
         </script>
-        <main class="flex-grow flex flex-col items-center w-full pt-20">
-            <!-- Hero Section -->
-            <section class="relative w-full max-w-[1440px] flex items-center px-6 md:px-12 pt-10 pb-10 lg:pt-32">
-                <div class="w-full flex flex-col lg:items-start">
-                    <!-- Text Content -->
-                    <div class="flex flex-col items-start text-left gap-8 relative z-10 w-full lg:max-w-5xl lg:-mt-20">
-                        <div class="flex flex-col">
-                            <h1
-                                class="text-text-off-white text-5xl md:text-8xl lg:text-[7.5rem] font-bold leading-[0.85] tracking-tighter drop-shadow-2xl">
-                                <span
-                                    class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">We
-                                    Don't</span>
-                                <span
-                                    class="block text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">Just
-                                    Walk,</span>
-                                <span class="block text-primary mt-2">We Yump.</span>
-                            </h1>
-                        </div>
-                        <div class="h-px w-24 bg-primary/50"></div>
-                        <p class="text-accent-blue text-lg md:text-xl font-light max-w-2xl leading-relaxed">
-                            Elevating brands through radical digital transformation. We blend brutalist architecture
-                            with fluid user experiences.
-                        </p>
-                        <div class="flex items-center gap-6 mt-4">
-                        </div>
-                    </div>
+
+        <!-- Random Background Logic -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const images = [
+                    '/assets/hero-jump.webp',
+                    '/assets/hero-jump2.webp',
+                    '/assets/hero-jump3.webp',
+                    '/assets/hero-jump4.webp',
+                    '/assets/hero-jump5.webp',
+                    '/assets/hero-jump6.webp',
+                    '/assets/hero-jump7.webp',
+                    '/assets/hero-jump8.webp'
+                ];
+
+                const bgImage = document.getElementById('hero-bg-image');
+                if (bgImage) {
+                    const randomImage = images[Math.floor(Math.random() * images.length)];
+                    const img = new Image();
+                    img.src = randomImage;
+                    img.onload = () => {
+                        bgImage.style.backgroundImage = `url('${randomImage}')`;
+                        bgImage.classList.remove('opacity-0');
+                        // Low opacity for subpages as requested
+                        bgImage.classList.add('opacity-100');
+                    };
+                }
+            });
+        </script>
+
+        <main class="flex-grow pt-32 px-6 md:px-12 pb-20 max-w-[1440px] mx-auto w-full">
+            <!-- Page Heading -->
+            <div
+                class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-6 border-b border-white/10 pb-8">
+                <div class="max-w-2xl">
+                    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-6">
+                        <span
+                            class="text-stroke text-transparent hover:text-text-off-white transition-colors duration-500">Nuestros</span><br />
+                        <span class="text-primary">trabajos</span>
+                    </h1>
                 </div>
-            </section>
-            <!-- Selected Works Header -->
-            <section class="w-full max-w-[1440px] px-6 md:px-12 pt-0 pb-10">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                    <div>
-                        <a href="./portfolio.html"
-                            class="text-primary text-xs font-bold uppercase tracking-widest mb-2 block hover:text-primary">Visit
-                            our portfolio for more</a>
-                        <h2 class="text-text-off-white text-4xl md:text-5xl font-bold tracking-tight">Our work
-                        </h2>
-                    </div>
+                <div class="md:text-right max-w-sm md:max-w-2xl md:self-end md:pb-6">
+                    <p class="text-accent-blue text-lg leading-relaxed font-light">
+                        Una colección curada de artesanía digital. Construimos experiencias inmersivas que desafían los
+                        límites de la web.
+                    </p>
                 </div>
-            </section>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-12 pb-20 max-w-[1440px] mx-auto w-full">
-                <!-- Project 01 -->
-                <a href="http://www.vinaris.es" target="_blank" class="group cursor-pointer flex flex-col gap-6">
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-12 gap-y-12 md:gap-y-10 gap-x-6 md:gap-x-12">
+                <!-- Project 1 -->
+                <a href="http://www.vinaris.es" target="_blank"
+                    class="group cursor-pointer col-span-12 md:col-span-4 flex flex-col gap-6">
                     <div class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-white p-0">
                         <img alt="Vinaris Wine Distribution"
                             class="w-full h-full object-contain transition-transform duration-700 ease-out origin-center block scale-105 group-hover:scale-110"
@@ -274,19 +263,19 @@
                         <div class="flex flex-col gap-1">
                             <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">Vinaris
                             </h3>
-                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Wine
-                                distribution</span>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Distribución de
+                                vinos // Branding y estrategia digital</span>
                         </div>
                         <span class="text-accent-blue font-mono text-sm">01</span>
                     </div>
                 </a>
 
-                <!-- Project 02 -->
-                <article class="group cursor-pointer flex flex-col gap-6">
+                <!-- Project 2 (Aligned Right on mobile) -->
+                <article class="group cursor-pointer col-span-12 md:col-span-4 flex flex-col gap-6">
                     <div
                         class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-accent-blue/5">
                         <img alt="Sismaqua Branding"
-                            class="w-full h-full object-cover transition-transform duration-700 ease-out origin-center block scale-125 md:scale-100 group-hover:scale-105"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out origin-center block scale-100 group-hover:scale-105"
                             src="/assets/sismaqua-branding.webp" />
                         <!-- Hover Overlay Icon -->
                         <div
@@ -299,16 +288,16 @@
                         <div class="flex flex-col gap-1">
                             <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
                                 Sismaqua</h3>
-                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Water
-                                treatment</span>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Tratamiento de
+                                aguas // Branding</span>
                         </div>
                         <span class="text-accent-blue font-mono text-sm">02</span>
                     </div>
                 </article>
 
-                <!-- Project 03 -->
+                <!-- Project 3 -->
                 <a href="https://trampoleen.vercel.app/" target="_blank"
-                    class="group cursor-pointer flex flex-col gap-6">
+                    class="group cursor-pointer col-span-12 md:col-span-4 flex flex-col gap-6">
                     <div
                         class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-[#0b1b36] border border-white/10">
                         <img alt="Trampoleen - Creative Space"
@@ -325,148 +314,125 @@
                         <div class="flex flex-col gap-1">
                             <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
                                 Trampoleen</h3>
-                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">Creative
-                                space</span>
+                            <span
+                                class="text-accent-blue text-sm uppercase tracking-wider font-medium line-clamp-2">Espacio
+                                creativo y laboratorio experimental // Identidad de marca y desarrollo web</span>
                         </div>
                         <span class="text-accent-blue font-mono text-sm">03</span>
                     </div>
                 </a>
-            </div>
 
-            <!-- CTA Section -->
-            <section
-                class="relative z-10 w-full max-w-[1440px] px-6 md:px-12 pt-16 pb-32 flex flex-col items-center text-center border-t border-white/10">
-                <div class="max-w-3xl relative">
-                    <h2 class="relative z-10 text-5xl md:text-6xl font-bold text-text-off-white tracking-tight mb-8">
-                        Ready to start <br />
-                        <span class="text-stroke text-transparent">the magic?</span>
-                    </h2>
-                    <p class="relative z-10 text-accent-blue text-lg mb-12 max-w-xl mx-auto">
-                        We partner with ambitious brands to build digital products that define the future. Don't settle
-                        for walking.
-                    </p>
-                    <div class="relative z-10">
-                        <button onclick="window.location.href='contact.html'"
-                            class="relative overflow-hidden rounded bg-primary text-white text-lg font-bold tracking-wider uppercase h-16 px-12 transition-all group">
-                            <span class="relative z-10 flex items-center gap-3">
-                                Let's talk
-                                <span
-                                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <!-- Footer -->
-            <footer class="w-full border-t border-white/10 bg-black/40 pt-16 pb-8">
-                <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                        <div class="col-span-1 md:col-span-2">
-                            <h3 class="text-2xl font-bold text-white mb-6">Yumpeen.com</h3>
-                            <p class="text-accent-blue max-w-xs">
-                                A digital studio crafting experiences that merge art, technology, and strategy.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Sitemap</h4>
-                            <ul class="space-y-3">
-                                <li><a class="text-accent-blue hover:text-primary transition-colors" href="/">Home</a>
-                                </li>
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./portfolio.html">Portfolio</a>
-                                </li>
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./services.html">Services</a></li>
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./about.html">About
-                                        us</a>
-                                </li>
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="./contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Socials</h4>
-                            <ul class="space-y-3">
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="https://www.instagram.com/yumpeen/" target="_blank"
-                                        rel="noopener noreferrer">Instagram</a></li>
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="https://x.com/Yumpeen" target="_blank" rel="noopener noreferrer">Twitter /
-                                        X</a></li>
-                                <li><a class="text-accent-blue hover:text-primary transition-colors"
-                                        href="https://www.linkedin.com/company/yumpeen" target="_blank"
-                                        rel="noopener noreferrer">LinkedIn</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Project 4 (Rest of projects in 2 columns on mobile) -->
+                <!-- Project 4 -->
+                <article class="group cursor-pointer col-span-12 md:col-span-4 flex flex-col gap-6">
                     <div
-                        class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
-                        <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. All rights reserved.</p>
-                        <div class="flex gap-6">
-                            <a class="text-accent-blue/50 hover:text-primary text-sm" href="privacy.html">Privacy
-                                policy</a>
-                            <a class="text-accent-blue/50 hover:text-primary text-sm" href="terms.html">Terms of
-                                service</a>
+                        class="card-image-container relative overflow-hidden aspect-[4/3] rounded-none bg-accent-blue/5">
+                        <img alt="Smart Home Hub Interface"
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out origin-center block group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfyq26TN2OPgh4yo5GjJlI9vsczkc1AFIKAZQRUXQ2MzmTL_1gP8jAOl2xZ7nz0LGjP4WvZOZsCCBqSu8fDSl_4iqOclxVZt8BpAY1vctlPI-buaobGQLwbV8rbQgKaZdNP0FVKTLcQ2542gW3Um-ZWNAAlJq9meB350UEjHFA36WEZ3B1_ukTQ3Il6RxuGot0fuEWCwUGMH3a_bylrrXmipQf28UNZjA8K3ymVBgUEbQhtOwnL3N-JL_f9lVfQR5t4piTo0OIjE" />
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                            <span
+                                class="material-symbols-outlined text-white text-5xl drop-shadow-lg">arrow_outward</span>
                         </div>
                     </div>
-                </div>
-            </footer>
+                    <div class="border-t border-accent-blue/30 pt-4 flex justify-between items-start">
+                        <div class="flex flex-col gap-1">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">Smart
+                                Home Hub</h3>
+                            <span class="text-accent-blue text-sm uppercase tracking-wider font-medium">IoT / Interfaz
+                                de usuario</span>
+                        </div>
+                        <span class="text-accent-blue font-mono text-sm">04</span>
+                    </div>
+                </article>
+            </div>
         </main>
+
+        <!-- CTA Section -->
+        <section
+            class="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-16 pb-32 flex flex-col items-center text-center border-t border-white/10">
+            <div class="max-w-3xl relative">
+                <h2 class="relative z-10 text-5xl md:text-6xl font-bold text-text-off-white tracking-tight mb-8">
+                    ¿Listo para elevar <br />
+                    <span class="text-stroke text-transparent">tu presencia digital?</span>
+                </h2>
+                <p class="relative z-10 text-accent-blue text-lg mb-12 max-w-xl mx-auto">
+                    Tu próximo gran salto empieza aquí.
+                </p>
+                <div class="relative z-10">
+                    <button onclick="window.location.href='contact.html'"
+                        class="relative overflow-hidden rounded bg-primary text-white text-lg font-bold tracking-wider uppercase h-16 px-12 transition-all group">
+                        <span class="relative z-10 flex items-center gap-3">
+                            Hablemos
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full border-t border-white/10 bg-black/40 pt-16 pb-8">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="col-span-1 md:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-6">Yumpeen.com</h3>
+                        <p class="text-accent-blue max-w-xs">
+                            Un estudio digital que crea experiencias donde convergen el arte, la tecnología y la
+                            estrategia.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Mapa del sitio</h4>
+                        <ul class="space-y-3">
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./index.html">Inicio</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./portfolio.html">Portfolio</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./services.html">Servicios</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./about.html">Nosotros</a>
+                            </li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="./contact.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Sociales</h4>
+                        <ul class="space-y-3">
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="https://www.instagram.com/yumpeen/" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a></li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="https://x.com/Yumpeen" target="_blank" rel="noopener noreferrer">Twitter /
+                                    X</a></li>
+                            <li><a class="text-accent-blue hover:text-primary transition-colors"
+                                    href="https://www.linkedin.com/company/yumpeen" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+                    <p class="text-accent-blue/50 text-sm">© 2026 Yumpeen.com. Todos los derechos reservados.</p>
+                    <div class="flex gap-6">
+                        <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                            href="privacy.html">Privacidad</a>
+                        <a class="text-accent-blue/50 hover:text-primary text-sm transition-colors"
+                            href="terms.html">Condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = [
-                '/assets/hero-jump.webp',
-                '/assets/hero-jump2.webp',
-                '/assets/hero-jump3.webp',
-                '/assets/hero-jump4.webp',
-                '/assets/hero-jump5.webp',
-                '/assets/hero-jump6.webp',
-                '/assets/hero-jump7.webp',
-                '/assets/hero-jump8.webp'
-            ];
-
-            const bgImage = document.getElementById('hero-bg-image');
-            const randomImage = images[Math.floor(Math.random() * images.length)];
-
-            // Preload and show
-            const img = new Image();
-            img.src = randomImage;
-            img.onload = () => {
-                bgImage.style.backgroundImage = `url('${randomImage}')`;
-                bgImage.classList.remove('opacity-0');
-                bgImage.classList.add('opacity-100');
-            };
-        });
-    </script>
-    <style>
-        @keyframes slow-bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(12px);
-            }
-        }
-
-        .animate-slow-bounce {
-            animation: slow-bounce 2.5s ease-in-out infinite;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-    </style>
 </body>
 
 </html>
