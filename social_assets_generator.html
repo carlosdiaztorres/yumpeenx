@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yumpeen Social Assets</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Instagram Portrait Container (4:5 ratio) */
+        .instagram-post {
+            width: 540px; /* Scaled down for viewing, or use 1080px for high res screenshot */
+            height: 675px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .color-band {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .color-name {
+            font-size: 3rem; 
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hex-code {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            padding: 0.5rem 1rem;
+            border: 1px solid currentColor;
+            border-radius: 4px;
+        }
+
+        /* Band 1: Yumpeen Red */
+        .band-red {
+            background-color: #EF233C;
+            color: #EDF2F4;
+        }
+        
+        .band-red .hex-code {
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        /* Band 2: Deep Dark */
+        .band-dark {
+            background-color: #031126;
+            color: #EDF2F4;
+        }
+
+        .band-dark .hex-code {
+             border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Band 3: Off White */
+        .band-light {
+            background-color: #EDF2F4;
+            color: #031126;
+        }
+
+        .band-light .hex-code {
+            border-color: rgba(3,17,38,0.2);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- This is the element to screenshot -->
+    <div class="instagram-post">
+        
+        <!-- Yumpeen Red -->
+        <div class="color-band band-red">
+            <span class="color-name">Yumpeen Red</span>
+            <span class="hex-code">#EF233C</span>
+        </div>
+
+        <!-- Deep Void -->
+        <div class="color-band band-dark">
+            <span class="color-name">Deep Void</span>
+            <span class="hex-code">#031126</span>
+        </div>
+
+        <!-- Off White -->
+        <div class="color-band band-light">
+            <span class="color-name">Off White</span>
+            <span class="hex-code">#EDF2F4</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
